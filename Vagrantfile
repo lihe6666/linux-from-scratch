@@ -11,11 +11,14 @@ Vagrant.configure("2") do |config|
   # https://docs.vagrantup.com.
 
   # The hostname and define
-  config.vm.define "finger"
   config.vm.hostname = "finger"
 
-  # Append a disk
-  config.vm.disk :disk, name: "finger", size: "20GB"
+  config.vm.define "finger" do |root|
+    # Append a disk
+    root.vm.disk :disk, name: "finger", size: "20GB"
+    # Append a swap 
+    root.vm.disk :disk, name: "swap", size: "4GB"
+  end
 
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://vagrantcloud.com/search.
