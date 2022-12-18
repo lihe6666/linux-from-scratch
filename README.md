@@ -16,6 +16,8 @@
     $ sudo apt install build-essential bison g++ texinfo git vim
     # 检测
     $ bash version-check.sh
+    # 格式化磁盘
+    sudo mkfs -v -t ext4 /dev/
     # 默认路径
     export LFS=/mnt/lfs
     # 挂载
