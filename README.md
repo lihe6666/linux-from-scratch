@@ -4,10 +4,20 @@
 2. 实验场景搭建: vagrant + virtual box, 宿主为 ubuntu/focal64 20.04 LTS
 3. Linux From Scratch Version 11.2 stable
 
+
+[VirtualBox 7.0.4]("https://download.virtualbox.org/virtualbox/7.0.4/virtualbox-7.0_7.0.4-154605~Ubuntu~jammy_amd64.deb" "Package")
+
+[Extension Pack]("https://download.virtualbox.org/virtualbox/7.0.4/Oracle_VM_VirtualBox_Extension_Pack-7.0.4.vbox-extpack" "Extension Pack")
+
 系统必备的环境安装:
-
+    
     # 根据结果判断
+    $ sudo ln -sf /bin/bash /bin/sh
+    $ sudo apt install build-essential bison g++ texinfo git vim
+    # 检测
     $ bash version-check.sh
-
-    $ sudo apt install build-essential bison g++ texinfo
-
+    # 默认路径
+    export LFS=/mnt/lfs
+    # 挂载
+    sudo mount /dev/<xxx> /mnt/lfs # xxx 磁盘标号
+    # 下载文件 sources
