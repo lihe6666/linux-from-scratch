@@ -13,13 +13,16 @@
     
     # 根据结果判断
     $ sudo ln -sf /bin/bash /bin/sh
-    $ sudo apt install build-essential bison g++ texinfo git vim
+    $ sudo apt install build-essential bison g++ texinfo git vim gawk
     # 检测
     $ bash version-check.sh
     # 格式化磁盘
-    sudo mkfs -v -t ext4 /dev/
+    sudo mkfs -v -t ext4 /dev/sd[x]
     # 默认路径
     export LFS=/mnt/lfs
+    mkdir -pv $LFS
     # 挂载
     sudo mount /dev/<xxx> /mnt/lfs # xxx 磁盘标号
     # 下载文件 sources
+
+## 4.1 构建临时环境，增加临时用户 001.sh
